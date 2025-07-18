@@ -4,7 +4,7 @@ import com.CloudBanking.Banking.model.Transaction;
 import com.CloudBanking.Banking.repository.AccountRepository;
 import com.CloudBanking.Banking.repository.TransactionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.*;  
 
 import java.util.List;
 

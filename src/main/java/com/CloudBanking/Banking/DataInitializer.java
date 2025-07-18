@@ -2,15 +2,21 @@ package com.CloudBanking.Banking;
 
 import com.CloudBanking.Banking.model.*;
 import com.CloudBanking.Banking.repository.*;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 import java.math.BigDecimal;
 import java.util.Optional;
 
 @Configuration
 public class DataInitializer {
+
+    @Autowired
+    private PasswordEncoder passwordEncoder;
 
     @Bean
     CommandLineRunner initData(UserRepository userRepo, AccountRepository accountRepo, TransactionRepository txRepo) {
@@ -22,7 +28,7 @@ public class DataInitializer {
                 User user = new User();
                 user.setUsername("Alice");
                 user.setEmail("alice@example.com");
-                user.setPassword("password123");
+                user.setPassword(passwordEncoder.encode("password123"));
                 userRepo.save(user);
 
                 // Create accounts for test
