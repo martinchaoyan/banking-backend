@@ -12,7 +12,7 @@ import java.util.Date;
 
 @Component
 public class JwtUtil {
-    private final String SECRET_KEY = "mySecretKey123456mySecretKey123456"; // 至少32位
+    private final String SECRET_KEY = "mySecretKey123456mySecretKey123456";
 
     public String generateToken(User user) {
         return Jwts.builder()

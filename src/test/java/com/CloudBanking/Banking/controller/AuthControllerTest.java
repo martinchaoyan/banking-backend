@@ -46,7 +46,11 @@ public class AuthControllerTest {
             }
         """;
 
-        when(authManager.authenticate(any())).thenReturn(mock(Authentication.class));
+        // return True
+        
+        Authentication fakeAuth = mock(Authentication.class);
+        when(fakeAuth.isAuthenticated()).thenReturn(true);
+        when(authManager.authenticate(any())).thenReturn(fakeAuth);
 
         User fakeUser = new User();
         fakeUser.setEmail("alice@example.com");
