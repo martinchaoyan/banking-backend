@@ -2,8 +2,8 @@ pipeline {
     agent any
 
     tools {
-        jdk 'JDK_21'          // 你需要在 Jenkins 中配置这个名字的 JDK 21
-        gradle 'Gradle_8'     // 同上，根据你 Jenkins 中配置的名称来写
+        jdk 'JDK_21'
+        gradle 'Gradle_8'
     }
 
     environment {
