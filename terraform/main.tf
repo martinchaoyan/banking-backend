@@ -29,3 +29,4 @@ resource "docker_container" "postgres" {
     "POSTGRES_DB=cloudbanking"
   ]
 }
+
